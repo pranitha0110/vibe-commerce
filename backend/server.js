@@ -13,7 +13,7 @@ createDB().then((database) => (db = database));
 // 📦 GET /api/products — from Fake Store API
 app.get("/api/products", async (req, res) => {
   try {
-    const response = await axios.get("https://fakestoreapi.com/products?limit=8");
+    const response = await axios.get("https://fakestoreapi.com/products");
     res.json(response.data);
   } catch (err) {
     res.status(500).json({ message: "Error fetching products" });
